@@ -93,14 +93,6 @@ const productManagementItems = [
     },
 ];
 
-const analyticsItems = [
-    {
-        title: "Analytics",
-        url: "/admin/analytics",
-        icon: BarChart3,
-    },
-]
-
 import Link from "next/link";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
 import { useState } from "react";
@@ -249,25 +241,6 @@ export function AppSidebar() {
 
                 <Separator className="my-2" />
 
-
-                <SidebarGroup>
-                    <SidebarGroupLabel>Insights</SidebarGroupLabel>
-
-                    <SidebarGroupContent>
-                        <SidebarMenu className="space-y-2">
-                            {analyticsItems.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton render={
-                                        <a href={item.url} className="flex items-center gap-4">
-                                            <item.icon className="size-5!" />
-                                            <span>{item.title}</span>
-                                        </a>
-                                    } />
-                                </SidebarMenuItem>
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
             </SidebarContent>
 
             <Separator className="my-2" />
@@ -276,7 +249,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton render={
-                            <a href="/admin/settings" className="flex items-center gap-4">
+                            <a href="/settings" className="flex items-center gap-4">
                                 <Settings className="size-5!" />
                                 <span>Settings</span>
                             </a>

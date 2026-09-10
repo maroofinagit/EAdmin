@@ -910,6 +910,10 @@
     top: calc(var(--spacing) * 3.5);
   }
 
+  .top-8 {
+    top: calc(var(--spacing) * 8);
+  }
+
   .right-0 {
     right: 0;
   }
@@ -1090,6 +1094,10 @@
     margin-bottom: calc(var(--spacing) * 8);
   }
 
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -1222,6 +1230,11 @@
     height: calc(var(--spacing) * 10);
   }
 
+  .size-11 {
+    width: calc(var(--spacing) * 11);
+    height: calc(var(--spacing) * 11);
+  }
+
   .size-12 {
     width: calc(var(--spacing) * 12);
     height: calc(var(--spacing) * 12);
@@ -1333,10 +1346,6 @@
     max-height: calc(var(--spacing) * 62.5);
   }
 
-  .max-h-100 {
-    max-height: calc(var(--spacing) * 100);
-  }
-
   .min-h-0 {
     min-height: 0;
   }
@@ -1351,6 +1360,10 @@
 
   .min-h-full {
     min-height: 100%;
+  }
+
+  .min-h-screen {
+    min-height: 100vh;
   }
 
   .min-h-svh {
@@ -1776,6 +1789,12 @@
     margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-10 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   :where(.space-y-12 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
@@ -1848,10 +1867,6 @@
 
   .overflow-y-auto {
     overflow-y: auto;
-  }
-
-  .overflow-y-hidden {
-    overflow-y: hidden;
   }
 
   .rounded {
@@ -2011,6 +2026,16 @@
     }
   }
 
+  .border-destructive\/30 {
+    border-color: var(--destructive);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-destructive\/30 {
+      border-color: color-mix(in oklab, var(--destructive) 30%, transparent);
+    }
+  }
+
   .border-foreground {
     border-color: var(--foreground);
   }
@@ -2137,6 +2162,16 @@
 
   .bg-card {
     background-color: var(--card);
+  }
+
+  .bg-destructive\/5 {
+    background-color: var(--destructive);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-destructive\/5 {
+      background-color: color-mix(in oklab, var(--destructive) 5%, transparent);
+    }
   }
 
   .bg-destructive\/10 {
@@ -2411,6 +2446,10 @@
     padding-inline: calc(var(--spacing) * 5);
   }
 
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
@@ -2449,6 +2488,10 @@
 
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
+  }
+
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
   }
 
   .py-12 {
@@ -4459,6 +4502,10 @@
 
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .md\:grid-cols-\[220px_1fr\] {
+      grid-template-columns: 220px 1fr;
     }
 
     .md\:flex-row {
