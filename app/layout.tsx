@@ -23,16 +23,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Admin Panel - CyberMart",
-  description: "Admin panel for CyberMart, a leading e-commerce platform.",
+  title: "Admin Panel | CyberMart",
+  description: "Manage CyberMart products, orders, customers, and store operations.",
+
+  robots: {
+    index: false,
+    follow: false,
+  },
+
+  openGraph: {
+    title: "Admin Panel | CyberMart",
+    description:
+      "Manage CyberMart products, orders, customers, and store operations.",
+    type: "website",
+    siteName: "CyberMart",
+    images: [
+      {
+        url: "/logoOg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CyberMart Admin Panel",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Admin Panel | CyberMart",
+    description:
+      "Manage CyberMart products, orders, customers, and store operations.",
+    images: ["/logoOg.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
 
   const cookieStore = await cookies();
-const defaultOpen =
+  const defaultOpen =
     cookieStore.get("sidebar_state")?.value === "true";
-    
+
   return (
     <html
       lang="en"
