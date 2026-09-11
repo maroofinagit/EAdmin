@@ -24,7 +24,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center justify-center">
 
                     <span className="hidden text-2xl tracking-[-0.08em] font-bold md:block font-display text-logo">
-                    
+
                         CyberMart
                     </span>
                 </Link>
@@ -33,9 +33,12 @@ export default function Navbar() {
 
             {/* right side navigation */}
             <div className="flex items-center gap-4">
-                <a href="/dashboard" className="hover:underline">
+                <Link href='https://cybermart.vercel.app' target="_blank" className="hover:underline">
+                    Store
+                </Link>
+                <Link href="/" className="hover:underline">
                     Dashboard
-                </a>
+                </Link>
                 <ToggleDL />
                 <AvatarMenu />
             </div>

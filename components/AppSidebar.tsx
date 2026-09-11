@@ -5,7 +5,6 @@ import {
     ShoppingCart,
     Users,
     Warehouse,
-    BarChart3,
     Tag,
     Settings,
     CreditCard,
