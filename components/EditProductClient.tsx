@@ -143,14 +143,14 @@ export default function EditProductClient({
             isNew,
             isActive,
 
-            discount:Number(discount),
+            discount: Number(discount),
 
             lastUpdated:
                 new Date().toISOString(),
 
-                variants: [],
+            variants: [],
         };
-        
+
         toast.success("Product updated successfully!");
         resetForm();
         router.push(`/products/${product.id}`);
@@ -159,7 +159,7 @@ export default function EditProductClient({
     return (
         <form
             onSubmit={handleSubmit}
-            className="space-y-12 py-12 max-w-5xl mx-auto px-6 md:px-0"
+            className="space-y-8 py-12 max-w-5xl mx-auto px-6 md:px-0"
         >
             <Breadcrumb>
                 <BreadcrumbList>
@@ -189,14 +189,14 @@ export default function EditProductClient({
             ================================================= */}
 
             <div>
+
                 <div className="mb-6">
-                    <h2 className="text-lg font-semibold">
-                        Product Information
+                    <h2 className="text-xl md:text-2xl font-semibold">
+                        Edit Product 
                     </h2>
 
                     <p className="text-sm text-muted-foreground">
-                        Add the basic information and
-                        specifications for this product.
+                        Update the product details below. Fields marked with an asterisk (*) are required.
                     </p>
                 </div>
 

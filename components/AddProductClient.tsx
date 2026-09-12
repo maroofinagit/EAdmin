@@ -313,7 +313,7 @@ export default function AddProductClient({
     return (
         <form
             onSubmit={handleSubmit}
-            className="space-y-12 py-12 max-w-5xl mx-auto px-6 md:px-0"
+            className="space-y-8 py-12 max-w-5xl mx-auto px-6 md:px-0"
         >
             <Breadcrumb>
                 <BreadcrumbList>
@@ -338,8 +338,8 @@ export default function AddProductClient({
 
             <div>
                 <div className="mb-6">
-                    <h2 className="text-lg font-semibold">
-                        Product Information
+                    <h2 className="text-xl md:text-2xl font-semibold">
+                        Add Product
                     </h2>
 
                     <p className="text-sm text-muted-foreground">
