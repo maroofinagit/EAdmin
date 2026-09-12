@@ -63,7 +63,7 @@ export function DataTable<TData extends TableRow>({
 
         setRowSelection({});
         setDialogOpen(false);
-        toast.success(`Category "${name}" has been deleted.`);
+        toast.success(`Color "${name}" has been deleted.`);
       },
     });
 
@@ -128,7 +128,7 @@ export function DataTable<TData extends TableRow>({
         );
         setRowSelection({});
         setDialogOpen(false);
-        toast.success(`${selectedRowIds.length} Category(s) have been deleted.`);
+        toast.success(`${selectedRowIds.length} Color(s) have been deleted.`);
       },
     });
 
@@ -165,7 +165,7 @@ export function DataTable<TData extends TableRow>({
               <div className=" justify-end w-full flex items-center gap-2 text-sm text-muted-foreground">
                 <Button variant="destructive" className="flex items-center gap-2 cursor-pointer" onClick={handleDeleteSelectedRows}>
                   <Trash className="w-4 h-4 text-red-500" />
-                  Delete {Object.keys(rowSelection).length} selected Category(s)
+                  Delete {Object.keys(rowSelection).length} selected Color(s)
                 </Button>
               </div>
             </div>

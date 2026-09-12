@@ -119,7 +119,7 @@ export default function ProductClient({ product }: ProductPageProps) {
     };
 
     return (
-        <div className="space-y-6 px-4 py-6 sm:px-6 lg:px-8">
+        <div className="space-y-6 py-6 px-6 lg:px-8">
 
             {/* Header */}
             <div className="flex flex-col items-start">
@@ -143,17 +143,17 @@ export default function ProductClient({ product }: ProductPageProps) {
                 </Breadcrumb>
 
                 <div className="flex flex-col items-start lg:items-center lg:flex-row lg:gap-0 gap-4 justify-between w-full mt-8">
-                    <h1 className="text-2xl font-semibold tracking-tight">
+                    <h1 className="md:text-2xl text-lg font-semibold tracking-tight">
                         {product.name}
                     </h1>
 
-                    <div className="flex items-center gap-4">
-                        <Link href={`/products/${product.id}/edit`} className="flex items-center justify-center gap-2 rounded-lg border dark:border-white border-black dark:hover:border-white hover:border-black bg-transparent px-3 py-2 text-sm font-medium hover:bg-black dark:hover:bg-white dark:hover:text-black hover:text-white dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">
+                    <div className="flex items-center gap-4 text-xs md:text-sm w-full justify-center md:justify-end">
+                        <Link href={`/products/${product.id}/edit`} className="flex items-center justify-center gap-2 rounded-lg border dark:border-white border-black dark:hover:border-white hover:border-black bg-transparent px-3 py-2 font-medium hover:bg-black dark:hover:bg-white dark:hover:text-black hover:text-white dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">
                             <Edit className="mr-2 size-4" />
                             Edit Product
                         </Link>
 
-                        <button className='flex cursor-pointer items-center justify-center gap-2 rounded-lg border dark:border-red-400 border-red-600 dark:text-red-400 text-red-600 dark:hover:border-red-400 hover:border-red-600 bg-transparent px-3 py-2 text-sm font-medium hover:bg-red-600 dark:hover:bg-red-400 dark:hover:text-black hover:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+                        <button className='flex cursor-pointer items-center justify-center gap-2 rounded-lg border dark:border-red-400 border-red-600 dark:text-red-400 text-red-600 dark:hover:border-red-400 hover:border-red-600 bg-transparent px-3 py-2 font-medium hover:bg-red-600 dark:hover:bg-red-400 dark:hover:text-black hover:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
                             onClick={handleDeleteProduct}
                         >
                             <Package className="mr-2 size-4" />
@@ -169,9 +169,9 @@ export default function ProductClient({ product }: ProductPageProps) {
                 <Card>
                     <CardHeader>
                         <div className="flex items-start justify-between gap-4">
-                            <div>
+                            <div className="space-y-1">
                                 <CardTitle>Product Information</CardTitle>
-                                <CardDescription>
+                                <CardDescription className="text-xs md:text-sm">
                                     Basic information about this product.
                                 </CardDescription>
                             </div>
@@ -204,7 +204,7 @@ export default function ProductClient({ product }: ProductPageProps) {
 
                     <CardContent className="space-y-6">
                         {/* Basic details */}
-                        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-5 grid-cols-2 lg:grid-cols-3">
                             <InfoItem
                                 label="Brand"
                                 value={product.brand}
@@ -241,7 +241,7 @@ export default function ProductClient({ product }: ProductPageProps) {
 
                         {/* Description */}
                         <div className="flex flex-col xl:flex-row items-center justify-between rounded-lg gap-8">
-                            <div className="xl:w-1/3 aspect-4/5 h-80 relative rounded-lg overflow-hidden border p-2 bg-red-100">
+                            <div className="xl:w-1/3 aspect-4/5 h-60 md:h-80 relative rounded-lg overflow-hidden border p-2 bg-red-100">
                                 <Image
                                     src={variants.length > 0 && variants[0].images.length > 0 ? variants[0].images[0] : "https://images.pexels.com/photos/28216688/pexels-photo-28216688.png"}
                                     alt={product.name}
@@ -255,7 +255,7 @@ export default function ProductClient({ product }: ProductPageProps) {
                                         Short Description
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                                    <p className="mt-1 text-xs md:text-sm leading-6 text-muted-foreground">
                                         {product.shortDescription}
                                     </p>
                                 </div>
@@ -265,7 +265,7 @@ export default function ProductClient({ product }: ProductPageProps) {
                                         Description
                                     </h3>
 
-                                    <p className="mt-1 whitespace-pre-line text-sm leading-6 text-muted-foreground">
+                                    <p className="mt-1 whitespace-pre-line text-xs md:text-sm leading-6 text-muted-foreground">
                                         {product.description}
                                     </p>
                                 </div>
@@ -387,15 +387,15 @@ export default function ProductClient({ product }: ProductPageProps) {
             <Card>
                 <CardHeader>
                     <div className="flex items-center justify-between gap-4">
-                        <div>
+                        <div className="space-y-1 w-1/2">
                             <CardTitle>Variants</CardTitle>
-                            <CardDescription>
+                            <CardDescription className="text-xs md:text-sm">
                                 Manage the available color and size
                                 combinations for this product.
                             </CardDescription>
                         </div>
 
-                        <Link href={`/products/${product.id}/variant/new`} className="flex items-center justify-center gap-2 rounded-lg border dark:border-white border-black dark:hover:border-white hover:border-black bg-transparent px-3 py-2 text-sm font-medium hover:bg-black dark:hover:bg-white dark:hover:text-black hover:text-white dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">
+                        <Link href={`/products/${product.id}/variant/new`} className="flex items-center justify-center gap-2 rounded-lg text-xs md:text-sm border dark:border-white border-black dark:hover:border-white hover:border-black bg-transparent px-3 py-2 font-medium hover:bg-black dark:hover:bg-white dark:hover:text-black hover:text-white dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">
                             <Plus className="mr-2 size-4" />
                             Add Variant
                         </Link>
@@ -436,7 +436,7 @@ export default function ProductClient({ product }: ProductPageProps) {
                                                             }
                                                         />
 
-                                                        <span>
+                                                        <span className="text-xs md:text-sm">
                                                             {variant.color.name}
                                                         </span>
                                                     </div>
@@ -450,7 +450,7 @@ export default function ProductClient({ product }: ProductPageProps) {
                                                 </TableCell>
 
                                                 {/* Price */}
-                                                <TableCell>
+                                                <TableCell className="text-xs md:text-sm ">
                                                     ₹
                                                     {variant.price.toLocaleString(
                                                         "en-IN"
@@ -458,7 +458,7 @@ export default function ProductClient({ product }: ProductPageProps) {
                                                 </TableCell>
 
                                                 {/* Stock */}
-                                                <TableCell>
+                                                <TableCell className="text-xs md:text-sm">
                                                     <StockBadge
                                                         stock={sizeVariant.stock}
                                                     />
@@ -559,9 +559,9 @@ function InfoItem({
 }) {
     return (
         <div className="space-y-1">
-            <p className="text-sm text-muted-foreground">{label}</p>
+            <p className="text-xs md:text-sm text-muted-foreground">{label}</p>
 
-            <p className={mono ? "font-mono text-sm" : "font-medium"}>
+            <p className={`text-sm ${mono ? "font-mono" : "font-medium"}`}>
                 {value}
             </p>
         </div>

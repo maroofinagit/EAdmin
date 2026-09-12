@@ -83,6 +83,7 @@
     --font-sans: var(--font-sans);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-50: #fef2f2;
     --color-red-100: #ffe2e2;
     --color-red-200: #ffcaca;
     --color-red-300: #ffa3a3;
@@ -136,6 +137,7 @@
     --color-slate-700: #314158;
     --color-slate-800: #1d293d;
     --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5dc;
     --color-gray-500: #6a7282;
     --color-gray-700: #364153;
     --color-gray-800: #1e2939;
@@ -188,6 +190,7 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
+      --color-red-50: lab(96.5005% 4.18508 1.52328);
       --color-red-100: lab(92.243% 10.2865 3.83865);
       --color-red-200: lab(86.017% 19.8815 7.75869);
       --color-red-300: lab(76.5514% 36.422 15.5335);
@@ -241,6 +244,7 @@
       --color-slate-700: lab(26.9569% -1.47016 -15.6993);
       --color-slate-800: lab(16.132% -.318035 -14.6672);
       --color-gray-200: lab(91.6229% -.159115 -2.26791);
+      --color-gray-300: lab(85.1236% -.612259 -3.7138);
       --color-gray-500: lab(47.7841% -.393182 -10.0268);
       --color-gray-700: lab(27.1134% -.956401 -12.3224);
       --color-gray-800: lab(16.1051% -1.18239 -11.7533);
@@ -876,6 +880,11 @@
     height: calc(var(--spacing) * 2.5);
   }
 
+  .size-3 {
+    width: calc(var(--spacing) * 3);
+    height: calc(var(--spacing) * 3);
+  }
+
   .size-4 {
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
@@ -929,6 +938,11 @@
   .size-12 {
     width: calc(var(--spacing) * 12);
     height: calc(var(--spacing) * 12);
+  }
+
+  .size-16 {
+    width: calc(var(--spacing) * 16);
+    height: calc(var(--spacing) * 16);
   }
 
   .size-auto {
@@ -1005,6 +1019,10 @@
     height: calc(var(--spacing) * 32);
   }
 
+  .h-60 {
+    height: calc(var(--spacing) * 60);
+  }
+
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
@@ -1079,6 +1097,10 @@
 
   .w-1 {
     width: var(--spacing);
+  }
+
+  .w-1\/2 {
+    width: 50%;
   }
 
   .w-2 {
@@ -1221,7 +1243,7 @@
     flex: 1;
   }
 
-  .shrink-0 {
+  .flex-shrink-0, .shrink-0 {
     flex-shrink: 0;
   }
 
@@ -1883,6 +1905,10 @@
     background-color: var(--color-gray-200);
   }
 
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
+  }
+
   .bg-green-100 {
     background-color: var(--color-green-100);
   }
@@ -1951,6 +1977,10 @@
 
   .bg-purple-300 {
     background-color: var(--color-purple-300);
+  }
+
+  .bg-red-50 {
+    background-color: var(--color-red-50);
   }
 
   .bg-red-100 {
@@ -2300,6 +2330,10 @@
     font-size: .8rem;
   }
 
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
@@ -2406,6 +2440,10 @@
 
   .text-gray-700 {
     color: var(--color-gray-700);
+  }
+
+  .text-gray-800 {
+    color: var(--color-gray-800);
   }
 
   .text-green-500 {
@@ -4183,6 +4221,20 @@
       display: flex;
     }
 
+    .md\:size-10 {
+      width: calc(var(--spacing) * 10);
+      height: calc(var(--spacing) * 10);
+    }
+
+    .md\:size-12 {
+      width: calc(var(--spacing) * 12);
+      height: calc(var(--spacing) * 12);
+    }
+
+    .md\:h-80 {
+      height: calc(var(--spacing) * 80);
+    }
+
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -4203,8 +4255,21 @@
       flex-direction: row;
     }
 
+    .md\:justify-end {
+      justify-content: flex-end;
+    }
+
     .md\:justify-start {
       justify-content: flex-start;
+    }
+
+    .md\:px-0 {
+      padding-inline: 0;
+    }
+
+    .md\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
 
     .md\:text-3xl {
@@ -4217,9 +4282,19 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
 
+    .md\:text-lg {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+
     .md\:text-sm {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+
+    .md\:text-xs {
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
     }
 
     .md\:leading-loose {

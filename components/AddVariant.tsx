@@ -104,7 +104,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
     };
 
     return (
-        <div className="mx-auto w-full max-w-5xl space-y-6 py-12">
+        <div className="mx-auto w-full max-w-5xl space-y-6 py-12 px-6 md:px-0">
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div className="flex flex-col gap-4">
@@ -134,11 +134,11 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                     </Breadcrumb>
 
                     <div>
-                        <h1 className="text-2xl font-semibold">
+                        <h1 className="md:text-2xl text-lg font-semibold">
                             Add Variant
                         </h1>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Add a new variant for this product.
                         </p>
                     </div>
@@ -147,7 +147,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
 
             {/* Product Information */}
             <div className="rounded-xl border bg-card p-5">
-                <div className="mb-4">
+                <div className="mb-4 space-y-1">
                     <h2 className="font-semibold">
                         Product
                     </h2>
@@ -163,7 +163,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                             Product
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-sm md:text-base">
                             {product.name}
                         </p>
                     </div>
@@ -173,7 +173,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                             Category
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-sm md:text-base">
                             {product.category}
                         </p>
                     </div>
@@ -183,7 +183,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                             Type
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-sm md:text-base">
                             {product.type}
                         </p>
                     </div>
@@ -193,7 +193,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                             Gender
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-sm md:text-base">
                             {product.gender}
                         </p>
                     </div>
@@ -207,11 +207,11 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
             >
                 <div className="rounded-xl border bg-card p-6 flex-col space-y-6 flex">
                     <div className="flex flex-col text-lg gap-1">
-                        <h2 className="font-semibold ">
+                        <h2 className="font-semibold">
                             Variant Details
                         </h2>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Define the color, size and inventory details.
                         </p>
                     </div>
@@ -224,7 +224,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                                 Color <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Select a color for this variant. Only colors not already used for this product will be available.
                             </span>
                         </div>
@@ -259,7 +259,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                                 Price <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Enter the price for this variant. This is the base price before any discounts.
                             </span>
                         </div>
@@ -281,7 +281,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                                 Size <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Select a size for this variant and specify the stock for each size.
                             </span>
                         </div>
@@ -319,7 +319,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                                             }}
                                         />
 
-                                        <span className="flex-1 text-sm">
+                                        <span className="flex-1 text-xs md:text-sm font-medium">
                                             {item}
                                         </span>
 
@@ -367,7 +367,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                             Variant Images
                         </h2>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Add images specific to this color variant.
                         </p>
                     </div>
@@ -405,7 +405,7 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                                 <ImagePlus className="size-5" />
                             </div>
 
-                            <span className="text-sm font-medium">
+                            <span className="text-xs md:text-sm font-medium">
                                 Add Image
                             </span>
                         </button>
@@ -417,14 +417,14 @@ export default function AddVariantPage({ product, colors, sizes }: AddVariantPag
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted cursor-pointer"
+                        className="rounded-md border px-4 py-2 text-xs md:text-sm font-medium hover:bg-muted cursor-pointer"
                     >
                         Cancel
                     </button>
 
                     <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-xs md:text-sm font-medium text-primary-foreground hover:bg-primary/90 cursor-pointer"
                     >
                         <Plus className="size-4" />
                         Add Variant

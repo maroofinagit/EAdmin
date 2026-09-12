@@ -100,7 +100,7 @@ export const columns = columnHelper.columns([
 
             return (
                 <span
-                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${colorClass}`}
+                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] md:text-xs font-semibold ${colorClass}`}
                 >
                     {status}
                 </span>
@@ -111,7 +111,7 @@ export const columns = columnHelper.columns([
     columnHelper.accessor("id", {
         header: "Order ID",
         cell: ({ row }) => (
-            <div className="font-medium">
+            <div className="font-medium text-xs md:text-sm">
                 <Link href={`/orders/${row.original.id}`} className="underline-offset-4 hover:underline">
                     {row.original.id}
                 </Link>
@@ -122,7 +122,7 @@ export const columns = columnHelper.columns([
     columnHelper.accessor("userId", {
         header: "User ID",
         cell: ({ row }) => (
-            <div className="font-medium">
+            <div className="font-medium text-xs md:text-sm">
                 <Link href={`/users/${row.original.userId}`} className="underline-offset-4 hover:underline">
                     {row.original.userId}
                 </Link>
@@ -137,7 +137,7 @@ export const columns = columnHelper.columns([
             const items = row.original.items;
 
             return (
-                <div className="font-medium">
+                <div className="font-medium text-xs md:text-sm">
                     {items.reduce(
                         (total, item) => total + item.quantity,
                         0
@@ -158,7 +158,7 @@ export const columns = columnHelper.columns([
             }).format(total);
 
             return (
-                <div className="font-medium">
+                <div className="font-medium text-xs md:text-sm">
                     {formatted}
                 </div>
             );
@@ -169,7 +169,7 @@ export const columns = columnHelper.columns([
         header: ({ column }) => (
             <Button
                 variant="ghost"
-                className="flex items-center p-0"
+                className="flex items-center p-0 "
                 onClick={() =>
                     column.toggleSorting(
                         column.getIsSorted() === "asc"
@@ -184,7 +184,7 @@ export const columns = columnHelper.columns([
             const date = new Date(row.getValue("createdAt"));
 
             return (
-                <div>
+                <div className="font-medium text-xs md:text-sm">
                     {date.toLocaleDateString("en-IN", {
                         day: "2-digit",
                         month: "short",

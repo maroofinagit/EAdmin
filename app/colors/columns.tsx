@@ -69,6 +69,11 @@ export const columns = columnHelper.columns([
                 <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
         ),
+        cell: ({ row }) => (
+            <div className="font-medium text-xs md:text-sm">
+                {row.getValue("name")}
+            </div>
+        ),
     }),
 
     columnHelper.accessor("hex", {
@@ -87,7 +92,7 @@ export const columns = columnHelper.columns([
             </Button>
         ),
         cell: ({ row }) => (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-xs md:text-sm">
                 <div
                     className="h-4 w-4 rounded-full border"
                     style={{ backgroundColor: row.original.hex }}

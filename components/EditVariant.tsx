@@ -79,7 +79,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
     };
 
     return (
-        <div className="mx-auto w-full max-w-5xl space-y-6 py-12">
+        <div className="mx-auto w-full max-w-5xl space-y-6 py-12 px-6 md:px-0">
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div className="flex flex-col gap-4">
@@ -109,11 +109,11 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                     </Breadcrumb>
 
                     <div>
-                        <h1 className="text-2xl font-semibold">
+                        <h1 className=" text-lg md:text-2xl font-semibold">
                             Edit Variant
                         </h1>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Edit the details of this variant.
                         </p>
                     </div>
@@ -127,7 +127,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                         Product
                     </h2>
 
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs md:text-sm text-muted-foreground">
                         Variant will be edited for this product.
                     </p>
                 </div>
@@ -138,7 +138,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Product
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-xs md:text-sm">
                             {product.name}
                         </p>
                     </div>
@@ -148,7 +148,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Category
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-xs md:text-sm">
                             {product.category}
                         </p>
                     </div>
@@ -158,7 +158,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Type
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-xs md:text-sm">
                             {product.type}
                         </p>
                     </div>
@@ -168,7 +168,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Gender
                         </p>
 
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-xs md:text-sm">
                             {product.gender}
                         </p>
                     </div>
@@ -176,7 +176,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                         <p className="text-xs text-muted-foreground">
                             Product Variant ID
                         </p>
-                        <p className="mt-1 font-medium">
+                        <p className="mt-1 font-medium text-xs md:text-sm">
                             {productVariant.id}
                         </p>
                     </div>
@@ -194,7 +194,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Variant Details
                         </h2>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Define the color, size and inventory details.
                         </p>
                     </div>
@@ -207,7 +207,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                                 Color <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Select a color for this variant. Only colors not already used for this product will be available.
                             </span>
                         </div>
@@ -242,7 +242,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                                 Price <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Enter the price for this variant. This is the base price before any discounts.
                             </span>
                         </div>
@@ -264,7 +264,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                                 Size <span className="text-destructive">*</span>
                             </label>
 
-                            <span className="text-sm text-muted-foreground">
+                            <span className="text-xs md:text-sm text-muted-foreground">
                                 Select a size for this variant and specify the stock for each size.
                             </span>
                         </div>
@@ -350,7 +350,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                             Variant Images
                         </h2>
 
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground">
                             Add images specific to this color variant.
                         </p>
                     </div>
@@ -388,7 +388,7 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                                 <ImagePlus className="size-5" />
                             </div>
 
-                            <span className="text-sm font-medium">
+                            <span className="text-xs md:text-sm font-medium">
                                 Add Image
                             </span>
                         </button>
@@ -400,14 +400,14 @@ export default function EditVariantClient({ product, colors, sizes, productVaria
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted cursor-pointer"
+                        className="rounded-md border px-4 py-2 text-xs md:text-sm font-medium hover:bg-muted cursor-pointer"
                     >
                         Cancel
                     </button>
 
                     <button
                         type="submit"
-                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 cursor-pointer"
+                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-xs md:text-sm font-medium text-primary-foreground hover:bg-primary/90 cursor-pointer"
                     >
                         <Plus className="size-4" />
                         Update Variant

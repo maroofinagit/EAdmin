@@ -139,9 +139,9 @@ const CardList = ({ title }: { title: string }) => {
                     ? popularProducts.map((item) => (
                         <Card
                             key={item.id}
-                            className="flex-row items-center justify-between gap-4 p-4"
+                            className="flex flex-row items-center gap-4 p-4"
                         >
-                            <div className="w-12 h-12 rounded-sm relative overflow-hidden">
+                            <div className="relative size-12 shrink-0 overflow-hidden rounded-sm">
                                 <Image
                                     src={Object.values(item.images)[0] || ""}
                                     alt={item.name}
@@ -149,20 +149,24 @@ const CardList = ({ title }: { title: string }) => {
                                     className="object-cover"
                                 />
                             </div>
-                            <CardContent className="flex-1 p-0">
-                                <CardTitle className="text-sm font-medium">
+
+                            <div className="min-w-0 flex-1">
+                                <CardTitle className="text-xs font-medium md:text-sm">
                                     {item.name}
                                 </CardTitle>
-                            </CardContent>
-                            <CardFooter className="p-0">${item.price}K</CardFooter>
+                            </div>
+
+                            <div className="shrink-0 text-xs md:text-sm">
+                                ${item.price}K
+                            </div>
                         </Card>
                     ))
                     : latestTransactions.map((item) => (
                         <Card
                             key={item.id}
-                            className="flex-row items-center justify-between gap-4 p-4"
+                            className="flex flex-row items-center gap-4 p-4"
                         >
-                            <div className="w-12 h-12 rounded-sm relative overflow-hidden">
+                            <div className="relative size-10 shrink-0 overflow-hidden rounded-sm md:size-12">
                                 <Image
                                     src={item.image}
                                     alt={item.title}
@@ -170,13 +174,23 @@ const CardList = ({ title }: { title: string }) => {
                                     className="object-cover"
                                 />
                             </div>
-                            <CardContent className="flex-1 p-0">
-                                <CardTitle className="text-sm font-medium">
+
+                            <div className="flex min-w-0 flex-1 flex-col items-start justify-center gap-2">
+                                <CardTitle className="text-xs font-medium md:text-sm">
                                     {item.title}
                                 </CardTitle>
-                                <Badge variant="secondary">{item.badge}</Badge>
-                            </CardContent>
-                            <CardFooter className="p-0">${item.count / 1000}K</CardFooter>
+
+                                <Badge
+                                    variant="secondary"
+                                    className="text-[10px] md:text-xs"
+                                >
+                                    {item.badge}
+                                </Badge>
+                            </div>
+
+                            <div className="shrink-0 text-xs md:text-sm">
+                                ${item.count / 1000}K
+                            </div>
                         </Card>
                     ))}
             </div>

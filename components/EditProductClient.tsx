@@ -159,7 +159,7 @@ export default function EditProductClient({
     return (
         <form
             onSubmit={handleSubmit}
-            className="space-y-12 py-12 max-w-5xl mx-auto"
+            className="space-y-12 py-12 max-w-5xl mx-auto px-6 md:px-0"
         >
             <Breadcrumb>
                 <BreadcrumbList>

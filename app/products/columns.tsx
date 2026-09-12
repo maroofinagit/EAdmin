@@ -55,15 +55,15 @@ export const columns: ColumnDef<DataTableFeatures, Product>[] = [
             const productId = row.original.id;
 
             return (
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 overflow-x-hidden min-w-0">
                     <img
                         src={product.variants[0]?.images[0] || "/placeholder.png"}
                         alt={product.name}
-                        className="h-10 w-10 rounded-md object-cover"
+                        className="size-8 md:size-10 rounded-md object-cover"
                     />
 
-                    <Link href={`/products/${productId}`} className="font-medium underline-offset-4 hover:underline">
-                        {product.name}
+                    <Link href={`/products/${productId}`} className="font-medium min-w-0 text-xs md:text-sm underline-offset-4 hover:underline">
+                        {product.name.length > 32 ? product.name.substring(0, 32) + "..." : product.name}
                     </Link>
                 </div>
             );
@@ -72,16 +72,43 @@ export const columns: ColumnDef<DataTableFeatures, Product>[] = [
     {
         accessorKey: "type",
         header: "Type",
+        cell: ({ row }) => {
+            const product = row.original;
+
+            return (
+                <span className="text-xs md:text-sm">
+                    {product.type}
+                </span>
+            );
+        },
     },
 
     {
         accessorKey: "gender",
         header: "Gender",
+        cell: ({ row }) => {
+            const product = row.original;
+
+            return (
+                <span className="text-xs md:text-sm">
+                    {product.gender}
+                </span>
+            );
+        },
     },
 
     {
         accessorKey: "brand",
         header: "Brand",
+        cell: ({ row }) => {
+            const product = row.original;
+
+            return (
+                <span className="text-xs md:text-sm">
+                    {product.brand}
+                </span>
+            );
+        },
     },
 
     {
@@ -108,14 +135,12 @@ export const columns: ColumnDef<DataTableFeatures, Product>[] = [
 
             return (
                 <span
-                    className={
-                        stock === 0
+                    className={`text-xs md:text-sm ${stock === 0
                             ? "text-red-500"
                             : stock < 10
                                 ? "text-yellow-500"
                                 : ""
-                    }
-                >
+                        }`}                >
                     {stock}
                 </span>
             );
@@ -129,8 +154,8 @@ export const columns: ColumnDef<DataTableFeatures, Product>[] = [
             const product = row.original;
 
             return (
-                <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-current" />
+                <div className="flex items-center gap-2 text-xs md:text-sm">
+                    <Star className="size-4 fill-current" />
 
                     <span>{product.rating}</span>
 
@@ -196,7 +221,7 @@ export const columns: ColumnDef<DataTableFeatures, Product>[] = [
                         <DropdownMenuSeparator />
 
                         <DropdownMenuItem className="text-red-500 cursor-pointer" onClick={() => {
-                            table.options.meta?.handleDeleteRow({rowId: product.id, name : product.name});
+                            table.options.meta?.handleDeleteRow({ rowId: product.id, name: product.name });
                         }}>
                             <Trash2 className="mr-2 h-4 w-4" />
                             Delete

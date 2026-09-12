@@ -74,7 +74,7 @@ export const columns = columnHelper.columns([
 
             return (
                 <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${colorClass}`}
+                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-semibold ${colorClass}`}
                 >
                     {status}
                 </span>
@@ -104,7 +104,7 @@ export const columns = columnHelper.columns([
                 currency: "USD",
             }).format(amount)
 
-            return <div className="font-medium">{formatted}</div>
+            return <div className="font-medium text-xs md:text-sm">{formatted}</div>
         },
     }),
     columnHelper.accessor("fullName", {
@@ -112,7 +112,7 @@ export const columns = columnHelper.columns([
             return (
                 <Button
                     variant="ghost"
-                    className='flex items-center p-0'
+                    className='flex items-center p-0 text-xs md:text-sm'
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
                     Full Name
@@ -124,6 +124,17 @@ export const columns = columnHelper.columns([
     }),
     columnHelper.accessor("userId", {
         header: "User ID",
+        cell: ({ row }) => {
+            const userId = row.getValue("userId") as string
+
+            return (
+                <div className="font-medium text-xs md:text-sm">
+                    <Link href={`/users/${userId}`} className="underline-offset-4 hover:underline">
+                        {userId}
+                    </Link>
+                </div>
+            )
+        },
     }),
     columnHelper.display({
         header: "Actions",

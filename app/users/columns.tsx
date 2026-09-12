@@ -70,7 +70,7 @@ export const columns = columnHelper.columns([
 
             return (
                 <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${colorClass}`}
+                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-semibold ${colorClass}`}
                 >
                     {status}
                 </span>
@@ -84,8 +84,8 @@ export const columns = columnHelper.columns([
             const fullName = row.getValue("fullName") as string
             const avatarUrl = row.original.avatar
             return (
-                <div className="flex items-center gap-4">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                <div className="flex items-center gap-4 text-xs md:text-sm">
+                    <div className="relative size-8 md:size-10 rounded-full overflow-hidden">
                         <Image src={avatarUrl} alt="Avatar" fill className="object-cover rounded-full" />
                     </div>
                     <Link href={`/users/${row.original.id}`} className="font-medium underline-offset-4 hover:underline">
@@ -107,6 +107,12 @@ export const columns = columnHelper.columns([
                     Email
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const email = row.getValue("email") as string
+            return (
+                <div className="font-medium text-xs md:text-sm">{email}</div>
             )
         },
 

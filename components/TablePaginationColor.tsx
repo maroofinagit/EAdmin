@@ -25,14 +25,14 @@ export function DataTablePaginationColor<TData extends RowData>({
   table,
 }: DataTablePaginationProps<TData>) {
   return (
-    <div className="flex items-center justify-between px-2">
-      <div className="flex-1 text-sm text-muted-foreground">
+    <div className="flex w-full min-w-0 flex-col gap-4 px-2 sm:flex-row sm:items-center sm:justify-between">
+      <div className="min-w-0 flex-1 text-xs md:text-sm text-muted-foreground">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>
-      <div className="flex items-center space-x-6 lg:space-x-8">
+      <div className="flex items-center space-x-6 lg:space-x-8 text-xs md:text-sm">
         <div className="flex items-center space-x-2">
-          <p className="text-sm font-medium">Rows per page</p>
+          <p className=" font-medium">Rows per page</p>
           <Select
             value={`${table.state.pagination.pageSize}`}
             onValueChange={(value) => {
@@ -51,7 +51,7 @@ export function DataTablePaginationColor<TData extends RowData>({
             </SelectContent>
           </Select>
         </div>
-        <div className="flex w-25 items-center justify-center text-sm font-medium">
+        <div className="flex w-25 items-center justify-center text-xs md:text-sm font-medium">
           Page {table.state.pagination.pageIndex + 1} of {table.getPageCount()}
         </div>
         <div className="flex items-center space-x-2">

@@ -71,6 +71,11 @@ export const columns = columnHelper.columns([
                 <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
         ),
+        cell: ({ row }) => (
+            <div className="font-medium text-xs md:text-sm">
+                {row.getValue("name")}
+            </div>
+        ),
     }),
 
     columnHelper.accessor("productCount", {
@@ -89,7 +94,7 @@ export const columns = columnHelper.columns([
             </Button>
         ),
         cell: ({ row }) => (
-            <div className="font-medium">
+            <div className="font-medium text-xs md:text-sm">
                 {row.getValue("productCount")}
             </div>
         ),
@@ -102,7 +107,7 @@ export const columns = columnHelper.columns([
 
             return (
                 <span
-                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${isActive
+                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] md:text-xs font-semibold ${isActive
                         ? "bg-green-300 text-green-800 dark:bg-green-700 dark:text-white"
                         : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-white"
                         }`}

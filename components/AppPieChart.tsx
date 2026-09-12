@@ -100,10 +100,10 @@ const AppPieChart = () => {
         </PieChart>
       </ChartContainer>
       <div className="mt-4 flex flex-col gap-2 items-center">
-        <div className="flex items-center gap-2 font-medium leading-none">
+        <div className="flex items-center gap-2 font-medium leading-none text-sm md:text-base">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4 text-green-500" />
         </div>
-        <div className="leading-none text-muted-foreground">
+        <div className="text-xs md:text-sm leading-none text-muted-foreground">
           Showing the top 5 products sold in the last month
         </div>
       </div>
